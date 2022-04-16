@@ -54,7 +54,6 @@ class MainActivity : AppCompatActivity() {
                 ed_height.length() < 1 -> msg.what = 1 //如果沒有輸入身高
                 ed_weight.length() < 1 -> msg.what = 2 //如果沒有輸入體重
                 else -> {
-                    ll_progress.visibility = View.VISIBLE  //顯示進度條
                     runThread()
                 }
             }
@@ -99,6 +98,7 @@ class MainActivity : AppCompatActivity() {
 
     //多執行緒
     private fun runThread(){
+        ll_progress.visibility = View.VISIBLE  //顯示進度條
         Thread{
             //初始化進度條
             progressBar2.progress = 0
