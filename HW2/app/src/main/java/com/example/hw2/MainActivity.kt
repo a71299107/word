@@ -9,9 +9,9 @@ import android.widget.EditText
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-    lateinit var username: EditText
-    lateinit var password: EditText
-    lateinit var button: Button
+    lateinit var username : EditText
+    lateinit var password : EditText
+    lateinit var button : Button
     var correct_username = "aaa"
     var correct_password = "123"
 

@@ -8,7 +8,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
-class Main2Activity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener {
+class Main2Activity : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
     var day = 0
     var month = 0
@@ -23,8 +23,8 @@ class Main2Activity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,Ti
     var savedMinute = 0
 
     lateinit var btn_timePicker: Button
-    lateinit var tv_textTime : TextView
-    lateinit var btn_logout : Button
+    lateinit var tv_textTime: TextView
+    lateinit var btn_logout: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +41,7 @@ class Main2Activity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,Ti
         }
     }
 
-    private fun getDateTimeCalendar(){
+    private fun getDateTimeCalendar() {
         val cal = Calendar.getInstance()
         day = cal.get(Calendar.DAY_OF_MONTH)  //天
         month = cal.get(Calendar.MONTH)  //月
@@ -49,8 +49,9 @@ class Main2Activity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,Ti
         hour = cal.get(Calendar.HOUR)  //小時
         minute = cal.get(Calendar.MINUTE)  //分鐘
     }
-    private fun pickDate(){
-        btn_timePicker.setOnClickListener{
+
+    private fun pickDate() {
+        btn_timePicker.setOnClickListener {
             getDateTimeCalendar()
             //context：建立日期選擇對話框的 parent context
             //listener：監聽使用者選擇的日期，使用者選擇日期後會調用監聽器
@@ -61,7 +62,7 @@ class Main2Activity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,Ti
         }
     }
 
-    override fun onDateSet(view:DatePicker?, year: Int, month:Int, dayOfMonth:Int){
+    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         savedDay = dayOfMonth
         savedMonth = month + 1
         savedYear = year
@@ -75,7 +76,7 @@ class Main2Activity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,Ti
         TimePickerDialog(this, this, hour, minute, true).show()
     }
 
-    override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute:Int){
+    override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
         savedHour = hourOfDay
         savedMinute = minute
 
