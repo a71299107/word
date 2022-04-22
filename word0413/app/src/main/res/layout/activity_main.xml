@@ -13,9 +13,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="體脂肪計算機"
-        android:textSize="22sp"
         android:textColor="@android:color/black"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
