@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
 class Main2Activity : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
-
     var day = 0
     var month = 0
     var year = 0
