@@ -9,7 +9,7 @@ import android.view.View
 import android.widget.*
 
 class MainActivity : AppCompatActivity() {
-    private var my_progress_data = 0
+    private var my_progress_data = 0 
     //抓取物件過來
     private lateinit var ed_height: EditText  //var是引用局部的可變變量的變數
     private lateinit var ed_weight: EditText
