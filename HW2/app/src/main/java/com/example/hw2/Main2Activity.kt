@@ -24,6 +24,7 @@ class Main2Activity : AppCompatActivity(), DatePickerDialog.OnDateSetListener, T
     lateinit var btn_timePicker: Button
     lateinit var tv_textTime: TextView
     lateinit var btn_logout: Button
+    lateinit var tv_text: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,8 +33,12 @@ class Main2Activity : AppCompatActivity(), DatePickerDialog.OnDateSetListener, T
         btn_timePicker = findViewById(R.id.btn_timePicker)
         tv_textTime = findViewById(R.id.tv_textTime)
         btn_logout = findViewById(R.id.btn_logout)
-
+        tv_text = findViewById(R.id.tv_text)
         pickDate()
+
+        intent?.extras?.let {
+            tv_text.text = "名字為：${it.getString("username")}"
+        }
 
         btn_logout.setOnClickListener {
             startActivityForResult(Intent(this, MainActivity::class.java), 1)

@@ -1,11 +1,13 @@
 package com.example.hw2
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import android.widget.RadioButton
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -35,7 +37,12 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Empty data provided", Toast.LENGTH_LONG).show();
         } else if (username.getText().toString().equals(correct_username)) {
             if (password.getText().toString().equals(correct_password)) {
-                startActivityForResult(Intent(this, Main2Activity::class.java), 1)
+                val b = Bundle()
+                b.putString("username","${username.text}")  //選擇要存入的資料   username.text.toString()
+                val i = Intent(this, Main2Activity::class.java)  //宣告意圖
+                i.putExtras(b)  //放入資料
+                setResult(Activity.RESULT_OK,Intent().putExtras(b))//儲存要返回的資料
+                startActivityForResult(i,1)  //開始動作
                 Toast.makeText(this, "Success Login", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(this, "Invalid Username/Password", Toast.LENGTH_LONG).show();
@@ -44,4 +51,5 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Invalid Username/Password", Toast.LENGTH_LONG).show();
         }
     }
+
 }
