@@ -10,7 +10,7 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState) 
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val ed_name = findViewById<EditText>(R.id.ed_name)
